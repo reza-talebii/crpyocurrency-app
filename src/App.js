@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 
 //IMPORT ANTD COMPONENTS
 import { Layout, Typography, Space } from "antd";
@@ -34,8 +34,22 @@ function App() {
             </Routes>
           </div>
         </Layout>
+        <footer
+          className="footer"
+          level={5}
+          style={{ color: "white", textAlign: "center" }}
+        >
+          <Typography.Title>
+            Cryptoverse <br />
+            All rights reserverd
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/news">News</Link>
+          </Space>
+        </footer>
       </main>
-      <footer className="footer"></footer>
     </section>
   );
 }
