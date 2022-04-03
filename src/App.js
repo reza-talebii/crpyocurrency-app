@@ -1,6 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+
+//IMPORT ANTD COMPONENTS
 import { Layout, Typography, Space } from "antd";
+
+//IMPORT COMPONENTS
+import Navbar from "./Components/Navbar";
 
 import "./App.css";
 
