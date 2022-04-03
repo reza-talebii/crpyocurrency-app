@@ -8,9 +8,19 @@ import { useGetCryptosQuery } from "../../services/cryptoApi";
 const { Title } = Typography;
 
 const HomePage = () => {
-  const { data, isFeatching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery();
 
-  console.log(data);
+  if (isFetching) return "Loading...";
+
+  const globalStats = data?.data?.stats;
+
+  const {
+    total,
+    totalExchanges,
+    totalMarketCap,
+    total24hVolume,
+    totalMarkets,
+  } = globalStats;
 
   return (
     <>
@@ -20,19 +30,19 @@ const HomePage = () => {
 
       <Row>
         <Col span={12}>
-          <Statistic title="Total CryptoCurrencies" value="5" />
+          <Statistic title="Total CryptoCurrencies" value={millify(total)} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Exchanges" value="5" />
+          <Statistic title="Total Exchanges" value={millify(totalExchanges)} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Market Cap" value="5" />
+          <Statistic title="Total Market Cap" value={millify(totalMarketCap)} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total 24h Volume" value="5" />
+          <Statistic title="Total 24h Volume" value={millify(total24hVolume)} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Markets" value="5" />
+          <Statistic title="Total Markets" value={millify(totalMarkets)} />
         </Col>
       </Row>
     </>
