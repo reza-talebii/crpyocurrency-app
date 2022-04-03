@@ -1,6 +1,7 @@
 import React from "react";
 
 import icon from "../assets/images/icon.png";
+import "./Navbar.css";
 
 import { Button, Menu, Typography, Avatar } from "antd";
 import { Link } from "react-router-dom";
