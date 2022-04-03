@@ -18,7 +18,7 @@ import "./App.css";
 
 function App() {
   return (
-    <section className="App">
+    <section className="app">
       <nav className={"navbar"}>
         <Navbar />
       </nav>
