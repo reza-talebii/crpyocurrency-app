@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 //IMPORT ANTD COMPONENTS
 import { Layout, Typography, Space } from "antd";
@@ -25,11 +25,13 @@ function App() {
       <main className="main">
         <Layout>
           <div className="routes">
-            <Route path="/" element={<HomePage />} />
-            <Route path="/exchanges" element={<Exchanges />} />
-            <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
-            <Route path="/crypto/:coinID" element={<CryptoDetails />} />
-            <Route path="/news" element={<News />} />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/exchanges" element={<Exchanges />} />
+              <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+              <Route path="/crypto/:coinID" element={<CryptoDetails />} />
+              <Route path="/news" element={<News />} />
+            </Routes>
           </div>
         </Layout>
       </main>
