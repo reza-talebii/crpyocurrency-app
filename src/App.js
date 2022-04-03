@@ -34,12 +34,11 @@ function App() {
             </Routes>
           </div>
         </Layout>
-        <footer
-          className="footer"
-          level={5}
-          style={{ color: "white", textAlign: "center" }}
-        >
-          <Typography.Title>
+        <footer className="footer">
+          <Typography.Title
+            style={{ color: "white", textAlign: "center" }}
+            level={5}
+          >
             Cryptoverse <br />
             All rights reserverd
           </Typography.Title>
