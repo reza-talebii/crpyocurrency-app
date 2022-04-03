@@ -1,10 +1,16 @@
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Layout, Typography, Space } from "antd";
+
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <div className={"navbar"}></div>
-    </div>
+    <section className="App">
+      <nav className={"navbar"}></nav>
+      <main className="main"></main>
+      <footer className="footer"></footer>
+    </section>
   );
 }
 
