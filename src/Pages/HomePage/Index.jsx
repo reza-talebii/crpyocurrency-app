@@ -11,7 +11,6 @@ const { Title } = Typography;
 const HomePage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
-  console.log(globalStats);
 
   if (isFetching) return "Loading...";
 
@@ -53,7 +52,7 @@ const HomePage = () => {
           Top 10 CryptoCurrencies in the world
         </Title>
         <Title level={3} className="show-more">
-          <Link to="/cryptoCurrencies">Show More</Link>
+          <Link to="/cryptocurrencies">Show More</Link>
         </Title>
       </section>
       <Cryptocurrencies simplified />
