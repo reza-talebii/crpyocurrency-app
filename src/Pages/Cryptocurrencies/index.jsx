@@ -6,6 +6,8 @@ import { Card, Row, Col, Input } from "antd";
 
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
+import { Loader } from "../../Components";
+
 //HELPER FUNCTIONS
 const filterCoins = (coins, searchTerm) => {
   const filteredCryptos = coins?.filter(
@@ -32,7 +34,7 @@ const Cryptocurrencies = ({ simplified }) => {
   }, [cryptos, searchTerm]);
 
   //LOADING
-  if (isFetching) return "Loading...";
+  if (isFetching) return <Loader />;
 
   return (
     <>

@@ -21,6 +21,7 @@ import {
 } from "../../services/cryptoApi";
 
 // import LineChart from "../../Components/LineChart/LineChart";
+import { Loader } from "../../Components";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -35,7 +36,7 @@ const CryptoDetails = () => {
   // });
   const cryptoDetails = data?.data?.coin;
 
-  if (isFetching) return <div>Loading...</div>;
+  if (isFetching) return <Loader />;
 
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
