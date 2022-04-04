@@ -3,8 +3,8 @@ import millify from "millify";
 import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
 
-// import { useGetCryptosQuery } from "../../services/cryptoApi";
-import { CryptoCurrencies, News } from "../index";
+import { useGetCryptosQuery } from "../../services/cryptoApi";
+import { Cryptocurrencies, News } from "../../Components";
 
 const { Title } = Typography;
 
@@ -56,7 +56,7 @@ const HomePage = () => {
           <Link to="/cryptoCurrencies">Show More</Link>
         </Title>
       </section>
-      <CryptoCurrencies simplified />
+      <Cryptocurrencies simplified />
 
       {/* NEWS HEADER */}
       <section className="home-heading-container">
