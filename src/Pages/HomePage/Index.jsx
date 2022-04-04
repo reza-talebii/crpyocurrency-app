@@ -63,7 +63,7 @@ const HomePage = () => {
           Latest Crypto News
         </Title>
         <Title level={3} className="show-more">
-          <Link to="/cryptoCurrencies">Show More</Link>
+          <Link to="/news">Show More</Link>
         </Title>
       </section>
       <News simplified />
