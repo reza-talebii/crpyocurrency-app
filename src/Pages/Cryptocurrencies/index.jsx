@@ -6,19 +6,29 @@ import { Card, Row, Col, Input } from "antd";
 
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
+//HELPER FUNCTIONS
+const filterCoins = (coins, searchTerm) => {
+  const filteredCryptos = coins?.filter(
+    (coin) =>
+      coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return filteredCryptos;
+};
+
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data: cryptos, isFetching } = useGetCryptosQuery(count);
   const [searchTerm, setSearchTerm] = useState("");
   const [cryptoList, setCryptoList] = useState([]);
 
+  //FILTER COINS & SET "cryptoList" STATE
   useEffect(() => {
     const cryptoCoinsData = cryptos?.data?.coins;
-    const filteredCryptos = cryptoCoinsData?.filter((crypto) =>
-      crypto.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredCoins = filterCoins(cryptoCoinsData, searchTerm);
 
-    setCryptoList(filteredCryptos);
+    setCryptoList(filteredCoins);
   }, [cryptos, searchTerm]);
 
   //LOADING
