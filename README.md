@@ -10,10 +10,12 @@ This website provides you with digital currency market value information
 
 ## What did I use in this project?
 
-react 18
+-react 18
 
-redux toolkit
+-redux toolkit (redux query)
 
-chart js
+-ant design 
 
-rapid api
+-chart js
+
+-rapid api
