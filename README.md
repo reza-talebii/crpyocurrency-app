@@ -12,6 +12,8 @@ This website provides you with digital currency market value information
 
 -react 18
 
+-react router
+
 -redux toolkit (redux query)
 
 -ant design 
