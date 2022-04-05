@@ -4,15 +4,16 @@
 
 ## Introduction
 
-This is a code repository for the corresponding video tutorial.
+This website provides you with digital currency market value information
 
-In this video, we will create a cryptocurrency app. We're going to use React and multiple APIs powered by https://rapidapi.com.
-
-By the end of this video, you will become the master of working with APIs.
+ digital currency news, specifications and currency charts.
 
 ## What did I use in this project?
 
--react 18
--redux toolkit
--chart js
--rapid api
+react 18
+
+redux toolkit
+
+chart js
+
+rapid api
