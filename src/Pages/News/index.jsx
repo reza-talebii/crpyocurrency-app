@@ -9,7 +9,7 @@ import { useGetCryptosQuery } from "../../services/cryptoApi";
 import { Loader } from "../../Components";
 
 const { Text, Title } = Typography;
-const { Option } = Select;
+// const { Option } = Select;
 
 const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
@@ -29,23 +29,18 @@ const News = ({ simplified }) => {
     <Row gutter={[24, 24]}>
       {!simplified && (
         <Col span={24}>
-          <Select
-            showSearch
+          <select
             className="select-news"
             placeholder="Select a Crypto"
-            optionFilterProp="children"
-            onChange={(value) => setNewsCategory(value)}
-            filterOption={(input, option) =>
-              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
+            onChange={(e) => setNewsCategory(e.target.value)}
           >
-            <Option value="Cryptocurency">Cryptocurrency</Option>
+            <option value="Cryptocurency">Cryptocurrency</option>
             {data?.data?.coins?.map((currency, index) => (
-              <Option value={currency.name} key={index}>
-                {currency.name}
-              </Option>
+              <option value={currency?.name} key={index}>
+                {currency?.name}
+              </option>
             ))}
-          </Select>
+          </select>
         </Col>
       )}
       {cryptoNews.value.map((news, i) => (
