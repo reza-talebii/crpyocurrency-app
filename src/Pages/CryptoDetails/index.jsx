@@ -21,21 +21,22 @@ import {
 } from "../../services/cryptoApi";
 
 import LineChart from "../../Components/LineChart/LineChart";
-import { Loader } from "../../Components";
+import { Error, Loader } from "../../Components";
 
 const { Title, Text } = Typography;
-const { Option } = Select;
 
 const CryptoDetails = () => {
   const { coinID } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
-  const { data, isFetching } = useGetCryptoDetailsQuery(coinID);
+  const { data, isFetching, isError } = useGetCryptoDetailsQuery(coinID);
   const { data: historyData } = useGetCryptoHistoryQuery({
     coinID,
     timePeriod,
   });
   const cryptoDetails = data?.data?.coin;
 
+  //handling Error & loading
+  if (isError) return <Error />;
   if (isFetching) return <Loader />;
 
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
@@ -107,9 +108,6 @@ const CryptoDetails = () => {
       icon: <ExclamationCircleOutlined />,
     },
   ];
-
-  console.log(data);
-  console.log(coinID);
 
   return (
     <Col className="coin-detail-container">

@@ -6,7 +6,7 @@ import moment from "moment";
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
-import { Loader } from "../../Components";
+import { Error, Loader } from "../../Components";
 
 const { Text, Title } = Typography;
 // const { Option } = Select;
@@ -18,12 +18,17 @@ const News = ({ simplified }) => {
   const { data } = useGetCryptosQuery(100);
   const count = simplified ? 6 : 12;
   const [newsCategory, setNewsCategory] = React.useState("cryptocurrency");
-  const { data: cryptoNews, isFetching } = useGetCryptoNewsQuery({
+  const {
+    data: cryptoNews,
+    isFetching,
+    isError,
+  } = useGetCryptoNewsQuery({
     newsCategory,
     count,
   });
 
   if (isFetching) return <Loader />;
+  if (isError) return <Error />;
 
   return (
     <Row gutter={[24, 24]}>
