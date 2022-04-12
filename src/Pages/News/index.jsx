@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Select, Typography, Row, Col, Avatar, Card } from "antd";
+import { Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
 
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
@@ -18,12 +18,12 @@ const News = ({ simplified }) => {
   const { data } = useGetCryptosQuery(100);
   const count = simplified ? 6 : 12;
   const [newsCategory, setNewsCategory] = React.useState("cryptocurrency");
-  const { data: cryptoNews } = useGetCryptoNewsQuery({
+  const { data: cryptoNews, isFetching } = useGetCryptoNewsQuery({
     newsCategory,
     count,
   });
 
-  if (!cryptoNews?.value) return <Loader />;
+  if (isFetching) return <Loader />;
 
   return (
     <Row gutter={[24, 24]}>
@@ -32,6 +32,7 @@ const News = ({ simplified }) => {
           <select
             className="select-news"
             placeholder="Select a Crypto"
+            value={newsCategory}
             onChange={(e) => setNewsCategory(e.target.value)}
           >
             <option value="Cryptocurency">Cryptocurrency</option>
