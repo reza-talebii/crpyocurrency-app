@@ -28,7 +28,7 @@ const { Option } = Select;
 
 const CryptoDetails = () => {
   const { coinID } = useParams();
-  const [timePeriod, setTimePeriod] = useState("1y");
+  const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinID);
   const { data: historyData } = useGetCryptoHistoryQuery({
     coinID,
@@ -108,6 +108,9 @@ const CryptoDetails = () => {
     },
   ];
 
+  console.log(data);
+  console.log(coinID);
+
   return (
     <Col className="coin-detail-container">
       <Col className="coin-heading-container">
@@ -120,7 +123,7 @@ const CryptoDetails = () => {
         </p>
       </Col>
 
-      <select name="" id=""></select>
+      {/* <select name="" id=""></select> */}
 
       <LineChart
         coinHistory={historyData}
