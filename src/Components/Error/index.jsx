@@ -11,10 +11,13 @@ const Error = () => {
       title="Submission Failed"
       subTitle="Please check and modify the following information before resubmitting."
       extra={[
-        <Button type="primary" key="console">
-          Go Console
+        <Button
+          type="primary"
+          key="console"
+          onClick={() => window.location.reload()}
+        >
+          Refresh the Page
         </Button>,
-        <Button key="buy">Buy Again</Button>,
       ]}
     >
       <div className="desc">
@@ -29,12 +32,12 @@ const Error = () => {
           </Text>
         </Paragraph>
         <Paragraph>
-          <CloseCircleOutlined className="site-result-demo-error-icon" /> Your
-          account has been frozen. <a>Thaw immediately &gt;</a>
+          <CloseCircleOutlined className="site-result-demo-error-icon" />
+          Make sure your VPN is connected
         </Paragraph>
         <Paragraph>
-          <CloseCircleOutlined className="site-result-demo-error-icon" /> Your
-          account is not yet eligible to apply. <a>Apply Unlock &gt;</a>
+          <CloseCircleOutlined className="site-result-demo-error-icon" /> Make
+          sure you have an internet connection
         </Paragraph>
       </div>
     </Result>
