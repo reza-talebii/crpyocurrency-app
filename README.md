@@ -1,23 +1,46 @@
-# Cryptoverse - Explore the World of Cryptocurrency
+## برنامه ارزهای دیجیتال
+> یک پروژه فول ریسپانسیو توسعه داده با react, redux toolkit (redux query), ant design , rapid api
+> دمو سایت [_اینجا_](https://crypto-appppp.netlify.app/).
 
-![Cryptoverse](https://i.ibb.co/8gh5Jc8/image.png)
+## اسکرین شات
 
-## Introduction
+![اسکرین شات](https://i.ibb.co/DVF4tNW/image.png)
 
-This website provides you with digital currency market value information
 
- digital currency news, specifications and currency charts.
 
-## What did I use in this project?
+## اطلاعات کلی
 
--react 18
+- مدیریت sates با redux toolkit
+- اربتباط با api با استفاده از redux query
+- طراحی سایت با ant design انجام شده  
+-کار با chart js
 
--react router
 
--redux toolkit (redux query)
+## تکنولوژی های استفاده شده
 
--ant design 
+- react - ورژن 18.0
+- react router- ورژن 6.0
+- ant-design  - ورژن
+- reduxjs/toolkit  - ورژن
+- chart.js  - ورژن
 
--chart js
 
--rapid api
+## ویژگی 
+
+- دیدن تمام از های دیجیتال 
+-دیدن تمام خبر های ارزدیجیتال 
+- فیلتر کردن اخبار مرتبط با ارز مورد نظر
+- سرچ ارزها
+
+
+## چالش ها
+
+- اکار با api
+- استفاده از tailwindcss برای استایل دهی 
+
+
+
+
+
+## وضعیت پروژه
+تمام شده
