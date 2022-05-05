@@ -5,3 +5,4 @@ export { default as Exchanges } from "../Pages/Exchanges";
 export { default as HomePage } from "../Pages/HomePage";
 export { default as News } from "../Pages/News";
 export { default as Loader } from "../Components/Loader";
+export { default as Error } from "../Components/Error";

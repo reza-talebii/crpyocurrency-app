@@ -1,15 +1,15 @@
 import React from "react";
 
-import { Select, Typography, Row, Col, Avatar, Card } from "antd";
+import { Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
 
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
-import { Loader } from "../../Components";
+import { Error, Loader } from "../../Components";
 
 const { Text, Title } = Typography;
-const { Option } = Select;
+// const { Option } = Select;
 
 const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
@@ -18,34 +18,35 @@ const News = ({ simplified }) => {
   const { data } = useGetCryptosQuery(100);
   const count = simplified ? 6 : 12;
   const [newsCategory, setNewsCategory] = React.useState("cryptocurrency");
-  const { data: cryptoNews } = useGetCryptoNewsQuery({
+  const {
+    data: cryptoNews,
+    isFetching,
+    isError,
+  } = useGetCryptoNewsQuery({
     newsCategory,
     count,
   });
 
-  if (!cryptoNews?.value) return <Loader />;
+  if (isFetching) return <Loader />;
+  if (isError) return <Error />;
 
   return (
     <Row gutter={[24, 24]}>
       {!simplified && (
         <Col span={24}>
-          <Select
-            showSearch
+          <select
             className="select-news"
             placeholder="Select a Crypto"
-            optionFilterProp="children"
-            onChange={(value) => setNewsCategory(value)}
-            filterOption={(input, option) =>
-              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
+            value={newsCategory}
+            onChange={(e) => setNewsCategory(e.target.value)}
           >
-            <Option value="Cryptocurency">Cryptocurrency</Option>
+            <option value="Cryptocurency">Cryptocurrency</option>
             {data?.data?.coins?.map((currency, index) => (
-              <Option value={currency.name} key={index}>
-                {currency.name}
-              </Option>
+              <option value={currency?.name} key={index}>
+                {currency?.name}
+              </option>
             ))}
-          </Select>
+          </select>
         </Col>
       )}
       {cryptoNews.value.map((news, i) => (

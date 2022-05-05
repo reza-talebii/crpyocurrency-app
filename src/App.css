@@ -290,6 +290,9 @@ a:hover {
 
 .select-news {
   width: 180px;
+  background: transparent;
+  text-align: center;
+  border: none;
 }
 .news-card {
   min-height: 300px !important;

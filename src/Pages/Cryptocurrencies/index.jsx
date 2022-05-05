@@ -6,7 +6,7 @@ import { Card, Row, Col, Input } from "antd";
 
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
-import { Loader } from "../../Components";
+import { Error, Loader } from "../../Components";
 
 //HELPER FUNCTIONS
 const filterCoins = (coins, searchTerm) => {
@@ -21,7 +21,7 @@ const filterCoins = (coins, searchTerm) => {
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
-  const { data: cryptos, isFetching } = useGetCryptosQuery(count);
+  const { data: cryptos, isFetching, isError } = useGetCryptosQuery(count);
   const [searchTerm, setSearchTerm] = useState("");
   const [cryptoList, setCryptoList] = useState([]);
 
@@ -33,7 +33,8 @@ const Cryptocurrencies = ({ simplified }) => {
     setCryptoList(filteredCoins);
   }, [cryptos, searchTerm]);
 
-  //LOADING
+  //handling Error & loading
+  if (isError) return <Error />;
   if (isFetching) return <Loader />;
 
   return (
