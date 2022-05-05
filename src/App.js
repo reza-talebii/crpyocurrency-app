@@ -8,7 +8,7 @@ import { Layout, Typography, Space } from "antd";
 import {
   Navbar,
   HomePage,
-  // Exchanges,
+  Exchanges,
   Cryptocurrencies,
   CryptoDetails,
   News,
@@ -27,7 +27,7 @@ function App() {
           <div className="routes">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              {/* <Route path="/exchanges" element={<Exchanges />} /> */}
+              <Route path="/exchanges" element={<Exchanges />} />
               <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
               <Route path="/crypto/:coinID" element={<CryptoDetails />} />
               <Route path="/news" element={<News />} />
