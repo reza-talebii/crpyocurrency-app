@@ -16,7 +16,7 @@ const Exchanges = () => {
     <div>
       {" "}
       <Row gutter={[32, 32]} className="crypto-card-container">
-        {[...exchanges]?.splice(0, 50)?.map((exchange) => (
+        {exchanges?.map((exchange) => (
           <Col
             xs={24}
             sm={12}
