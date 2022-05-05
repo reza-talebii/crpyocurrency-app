@@ -4,8 +4,7 @@
 
 ## اسکرین شات
 
-![اسکرین شات](https://i.ibb.co/DVF4tNW/image.png)
-
+![Cryptoverse](https://i.ibb.co/8gh5Jc8/image.png)
 
 
 ## اطلاعات کلی
