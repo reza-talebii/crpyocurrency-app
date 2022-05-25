@@ -1,12 +1,12 @@
 import React from "react";
 
 import LineChart from "./LineChart";
-// import TradingviewChart from "./TradingviewChart";
+import TradingviewChart from "./TradingviewChart";
 
 import { Col, Row, Typography } from "antd";
 const { Title } = Typography;
 
-const Chart = ({ coinHistory, currentPrice, coinName }) => {
+const Chart = ({ coinHistory, currentPrice, coinName, symbol }) => {
   return (
     <>
       <Row className="chart-header">
@@ -21,7 +21,8 @@ const Chart = ({ coinHistory, currentPrice, coinName }) => {
             Current {coinName} Price: $ {currentPrice}
           </Title>
         </Col>
-        <LineChart coinHistory={coinHistory} />
+        {/* <LineChart coinHistory={coinHistory} /> */}
+        <TradingviewChart symbol={symbol} />
       </Row>
     </>
   );

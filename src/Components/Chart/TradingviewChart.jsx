@@ -2,17 +2,18 @@ import React from "react";
 
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 
-function ChartCom({ price, currency, symbol }) {
+function ChartCom({ symbol }) {
   return (
-    <AdvancedRealTimeChart
-      theme="light"
-      autosize
-      hide_legend
-      hide_top_toolbar
-      hide_side_toolbar
-      style={3}
-      symbol={symbol + currency}
-    ></AdvancedRealTimeChart>
+    <div style={{ width: "100%", height: "60vh" }}>
+      <AdvancedRealTimeChart
+        theme="light"
+        autosize
+        style={3}
+        hide_side_toolbar
+        interval="D"
+        symbol={symbol + "usd"}
+      ></AdvancedRealTimeChart>
+    </div>
   );
 }
 

@@ -127,6 +127,7 @@ const CryptoDetails = () => {
         coinHistory={historyData}
         currentPrice={millify(cryptoDetails?.price)}
         coinName={cryptoDetails?.name}
+        symbol={cryptoDetails?.symbol}
       />
 
       <Col className="stats-container">
