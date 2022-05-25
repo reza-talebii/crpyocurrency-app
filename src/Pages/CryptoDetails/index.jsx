@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import millify from "millify";
-import { Col, Row, Typography, Select } from "antd";
+import { Col, Row, Typography } from "antd";
 import {
   MoneyCollectOutlined,
   DollarCircleOutlined,
@@ -20,7 +20,7 @@ import {
   useGetCryptoHistoryQuery,
 } from "../../services/cryptoApi";
 
-import LineChart from "../../Components/LineChart/LineChart";
+import Chart from "../../Components/Chart/Chart";
 import { Error, Loader } from "../../Components";
 
 const { Title, Text } = Typography;
@@ -123,7 +123,7 @@ const CryptoDetails = () => {
 
       {/* <select name="" id=""></select> */}
 
-      <LineChart
+      <Chart
         coinHistory={historyData}
         currentPrice={millify(cryptoDetails?.price)}
         coinName={cryptoDetails?.name}

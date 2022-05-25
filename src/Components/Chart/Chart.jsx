@@ -21,6 +21,7 @@ const Chart = ({ coinHistory, currentPrice, coinName }) => {
             Current {coinName} Price: $ {currentPrice}
           </Title>
         </Col>
+        <LineChart coinHistory={coinHistory} />
       </Row>
     </>
   );
