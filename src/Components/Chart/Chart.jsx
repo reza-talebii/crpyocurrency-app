@@ -1,12 +1,22 @@
-import React from "react";
+import { useState } from "react";
 
 import LineChart from "./LineChart";
 import TradingviewChart from "./TradingviewChart";
 
-import { Col, Row, Typography } from "antd";
+import { Col, Row, Typography, Breadcrumb, Button } from "antd";
 const { Title } = Typography;
 
 const Chart = ({ coinHistory, currentPrice, coinName, symbol }) => {
+  const [activeChart, setActiveChart] = useState("tradingview");
+
+  console.log(activeChart);
+
+  //type of btn bg
+  const lineChartBgColor =
+    activeChart === "tradingview" ? "secondary" : "primary";
+  const tradingviewChartBgColor =
+    activeChart === "tradingview" ? "primary " : "secondary";
+
   return (
     <>
       <Row className="chart-header">
@@ -21,9 +31,34 @@ const Chart = ({ coinHistory, currentPrice, coinName, symbol }) => {
             Current {coinName} Price: $ {currentPrice}
           </Title>
         </Col>
-        {/* <LineChart coinHistory={coinHistory} /> */}
-        <TradingviewChart symbol={symbol} />
       </Row>
+
+      {/* chose Chart Buttons */}
+      <Breadcrumb style={{ textAlign: "center", marginBottom: "1rem" }}>
+        <Breadcrumb.Item>
+          <Button
+            type={lineChartBgColor}
+            size="large"
+            onClick={() => setActiveChart("Line")}
+          >
+            Line
+          </Button>
+        </Breadcrumb.Item>
+        <Button
+          type={tradingviewChartBgColor}
+          size="large"
+          onClick={() => setActiveChart("tradingview")}
+        >
+          Tradingview
+        </Button>
+      </Breadcrumb>
+
+      {/* Charts */}
+      {activeChart === "tradingview" ? (
+        <TradingviewChart symbol={symbol} />
+      ) : (
+        <LineChart coinHistory={coinHistory} />
+      )}
     </>
   );
 };
