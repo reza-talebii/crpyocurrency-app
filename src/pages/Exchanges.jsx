@@ -1,8 +1,8 @@
 import React from "react";
 
-import { useGetCryptoExchangesQuery } from "../../services/cryptoExchangesApi";
+import { useGetCryptoExchangesQuery } from "../common/services/cryptoExchangesApi";
 
-import { Loader } from "../../Components";
+import { Loader } from "../common/components";
 
 import { Card, Row, Col } from "antd";
 import millify from "millify";

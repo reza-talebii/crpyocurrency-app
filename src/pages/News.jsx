@@ -3,10 +3,10 @@ import React from "react";
 import { Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
 
-import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
-import { useGetCryptosQuery } from "../../services/cryptoApi";
+import { useGetCryptoNewsQuery } from "../common/services/cryptoNewsApi";
+import { useGetCryptosQuery } from "../common/services/cryptoApi";
 
-import { Error, Loader } from "../../Components";
+import { Error, Loader } from "../common/components";
 
 const { Text, Title } = Typography;
 // const { Option } = Select;

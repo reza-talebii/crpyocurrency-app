@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import millify from "millify";
+
 import { Col, Row, Typography } from "antd";
 import {
   MoneyCollectOutlined,
@@ -18,10 +19,9 @@ import {
 import {
   useGetCryptoDetailsQuery,
   useGetCryptoHistoryQuery,
-} from "../../services/cryptoApi";
+} from "../common/services/cryptoApi";
 
-import Chart from "../../Components/Chart/Chart";
-import { Error, Loader } from "../../Components";
+import { Error, Loader, Chart } from "../common/components";
 
 const { Title, Text } = Typography;
 

@@ -1,5 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { cryptoApi, cryptoNewsApi, cryptoExchangesApi } from "../services";
+import { cryptoApi } from "../services/cryptoApi";
+import { cryptoNewsApi } from "../services/cryptoNewsApi";
+import { cryptoExchangesApi } from "../services/cryptoExchangesApi";
 
 export default configureStore({
   reducer: {
