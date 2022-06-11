@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import LineChart from "./LineChart";
+// import LineChart from "./LineChart";
 import TradingviewChart from "./TradingviewChart";
 
 import { Col, Row, Typography, Breadcrumb, Button } from "antd";
@@ -8,8 +8,6 @@ const { Title } = Typography;
 
 const Chart = ({ coinHistory, currentPrice, coinName, symbol }) => {
   const [activeChart, setActiveChart] = useState("tradingview");
-
-  console.log(activeChart);
 
   //type of btn bg
   const lineChartBgColor =
@@ -33,8 +31,9 @@ const Chart = ({ coinHistory, currentPrice, coinName, symbol }) => {
         </Col>
       </Row>
 
+      <TradingviewChart symbol={symbol} />
       {/* chose Chart Buttons */}
-      <Breadcrumb style={{ textAlign: "center", marginBottom: "1rem" }}>
+      {/* <Breadcrumb style={{ textAlign: "center", marginBottom: "1rem" }}>
         <Breadcrumb.Item>
           <Button
             type={lineChartBgColor}
@@ -53,12 +52,11 @@ const Chart = ({ coinHistory, currentPrice, coinName, symbol }) => {
         </Button>
       </Breadcrumb>
 
-      {/* Charts */}
       {activeChart === "tradingview" ? (
         <TradingviewChart symbol={symbol} />
       ) : (
         <LineChart coinHistory={coinHistory} />
-      )}
+      )} */}
     </>
   );
 };
