@@ -15,7 +15,10 @@ const Routers = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/exchanges" element={<Exchanges />} />
-        {/* <Route path="/cryptocurrencies" element={<Cryptocurrencies />} /> */}
+        <Route
+          path="/cryptocurrencies"
+          element={<Cryptocurrencies simplified={null} />}
+        />
         <Route path="/crypto/:coinID" element={<CryptoDetails />} />
         {/* <Route path="/news" element={<News />} /> */}
       </Routes>

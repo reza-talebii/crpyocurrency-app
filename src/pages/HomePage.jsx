@@ -58,7 +58,7 @@ const HomePage = () => {
           <Link to="/cryptocurrencies">Show More</Link>
         </Title>
       </section>
-      <Cryptocurrencies simplified />
+      <Cryptocurrencies simplified={true} />
 
       {/* NEWS HEADER */}
       <section className="home-heading-container">
@@ -69,7 +69,7 @@ const HomePage = () => {
           <Link to="/news">Show More</Link>
         </Title>
       </section>
-      <News simplified />
+      <News simplified={true} />
     </>
   );
 };
