@@ -14,7 +14,7 @@ export const PublicRoutes: RoutesObject = {
     title: "cryptocurrencies",
   },
   cryptoDetails: {
-    get: "/cryptoDetails",
+    get: "/crypto/:coinID",
     return: <CryptoDetails />,
     title: "coin",
   },

@@ -9,7 +9,7 @@ import { useGetCryptosQuery } from "../common/services/cryptoApi";
 import { Error, Loader } from "../common/components";
 import { filterCoins } from "../common/helper/filterCoins";
 
-import { TypeSimplified } from "../common/interfaces/types";
+import { TypeSimplified } from "../common/types";
 import { Coin } from "../common/interfaces/crypto";
 
 const Cryptocurrencies: FC<TypeSimplified> = ({ simplified }) => {

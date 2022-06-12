@@ -6,6 +6,7 @@ import {
   BulbOutlined,
 } from "@ant-design/icons";
 
+//menu items
 export const menuItems = [
   { label: <Link to="/">Home</Link>, key: "item-1", icon: <HomeOutlined /> },
   {
@@ -20,7 +21,7 @@ export const menuItems = [
   },
   {
     label: <Link to="/news">News</Link>,
-    key: "item-3",
+    key: "item-4",
     icon: <BulbOutlined />,
   },
 ];

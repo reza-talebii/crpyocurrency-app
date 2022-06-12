@@ -4,7 +4,7 @@ import moment from "moment";
 import { useGetCryptoNewsQuery } from "../common/services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../common/services/cryptoApi";
 import { Error, Loader } from "../common/components";
-import { TypeSimplified } from "../common/interfaces/types";
+import { TypeSimplified } from "../common/types";
 import { Coin, NewsCoin } from "../common/interfaces/crypto";
 
 import { Typography, Row, Col, Avatar, Card } from "antd";

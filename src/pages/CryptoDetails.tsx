@@ -23,7 +23,7 @@ import {
 
 import { Error, Loader, Chart } from "../common/components";
 
-import { LinksCoin } from "../common/interfaces/types";
+import { LinksCoin } from "../common/types";
 
 const { Title, Text } = Typography;
 

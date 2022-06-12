@@ -1,4 +1,4 @@
-import { LinksCoin } from "./types";
+import { LinksCoin } from "../types";
 export interface Coin {
   // "24hVolume": string;
   btcPrice: number;
@@ -32,7 +32,6 @@ export interface ExchangesType {
 }
 
 export interface NewsCoin {
-  // about: {}[];
   category: string;
   datePublished: string;
   description: string;
