@@ -5,14 +5,12 @@ import { PublicRoutes } from "./routes";
 
 const Routers: React.FC = () => {
   return (
-    <div className="routes">
-      <Routes>
-        {Object.keys(PublicRoutes).map((key, index) => {
-          const { return: page, get: route } = PublicRoutes[key];
-          return <Route key={index} path={route} element={page} />;
-        })}
-      </Routes>
-    </div>
+    <Routes>
+      {Object.keys(PublicRoutes).map((key, index) => {
+        const { return: page, get: route } = PublicRoutes[key];
+        return <Route key={index} path={route} element={page} />;
+      })}
+    </Routes>
   );
 };
 

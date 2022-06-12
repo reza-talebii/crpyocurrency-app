@@ -4,13 +4,8 @@ import { useEffect, useState } from "react";
 
 import { Button, Menu, Typography, Avatar } from "antd";
 import { Link } from "react-router-dom";
-import {
-  HomeOutlined,
-  MoneyCollectOutlined,
-  FundOutlined,
-  MenuOutlined,
-  BulbOutlined,
-} from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
+import { menuItems } from "../../helper/dummyData";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -45,22 +40,7 @@ const Navbar = () => {
           </Button>
         </div>
 
-        {!visible && (
-          <Menu theme="dark">
-            <Menu.Item icon={<HomeOutlined />} key="1">
-              <Link to="/">Home</Link>
-            </Menu.Item>
-            <Menu.Item icon={<FundOutlined />} key="2">
-              <Link to="/cryptocurrencies">Cryptocurrencies</Link>
-            </Menu.Item>
-            <Menu.Item icon={<MoneyCollectOutlined />} key="3">
-              <Link to="/exchanges">Exchanges</Link>
-            </Menu.Item>
-            <Menu.Item icon={<BulbOutlined />} key="4">
-              <Link to="/news">News</Link>
-            </Menu.Item>
-          </Menu>
-        )}
+        {!visible && <Menu items={menuItems} theme="dark" />}
       </div>
     </nav>
   );

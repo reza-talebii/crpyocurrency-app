@@ -11,7 +11,9 @@ const MainLayout: React.FC = () => {
       <Navbar />
       <main className="main">
         <Layout>
-          <Routers />
+          <section className="routes">
+            <Routers />
+          </section>
         </Layout>
         <Footer />
       </main>
