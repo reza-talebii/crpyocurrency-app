@@ -1,5 +1,4 @@
-import { NumberLiteralType } from "typescript";
-
+import { LinksCoin } from "./types";
 export interface Coin {
   // "24hVolume": string;
   btcPrice: number;
@@ -9,9 +8,10 @@ export interface Coin {
   marketCap: number;
   name: string;
   price: number;
-  rank: NumberLiteralType;
+  rank: number;
   sparkline: [number];
   symbol: string;
   tier: number;
   uuid: number;
+  links: LinksCoin[];
 }

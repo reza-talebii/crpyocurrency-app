@@ -23,9 +23,11 @@ import {
 
 import { Error, Loader, Chart } from "../common/components";
 
+import { LinksCoin } from "../common/interfaces/types";
+
 const { Title, Text } = Typography;
 
-const CryptoDetails = () => {
+const CryptoDetails: React.FC = () => {
   const { coinID } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching, isError } = useGetCryptoDetailsQuery(coinID);
@@ -38,8 +40,6 @@ const CryptoDetails = () => {
   //handling Error & loading
   if (isError) return <Error />;
   if (isFetching) return <Loader />;
-
-  const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
   const stats = [
     {
@@ -121,8 +121,6 @@ const CryptoDetails = () => {
         </p>
       </Col>
 
-      {/* <select name="" id=""></select> */}
-
       <Chart
         coinHistory={historyData}
         currentPrice={millify(cryptoDetails?.price)}
@@ -184,7 +182,7 @@ const CryptoDetails = () => {
           <Title level={3} className="coin-details-heading">
             {cryptoDetails.name} Links
           </Title>
-          {cryptoDetails.links?.map((link) => (
+          {cryptoDetails.links?.map((link: LinksCoin) => (
             <Row className="coin-link" key={link.name}>
               <Title level={5} className="link-name">
                 {link.type}
