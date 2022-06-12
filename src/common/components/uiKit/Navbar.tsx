@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import icon from "../../../../assets/images/icon.png";
+// import icon from "../../../../assets/images/icon.png";
 
 import { Button, Menu, Typography, Avatar } from "antd";
 import { Link } from "react-router-dom";
@@ -33,7 +33,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="logo-container">
-          <Avatar src={icon} size="large" />
+          <Avatar src={""} size="large" />
           <Typography.Title level={3} className="logo">
             <Link to="/">Cryptoverse</Link>
           </Typography.Title>

@@ -5,7 +5,7 @@ import { Layout } from "antd";
 import { Navbar, Footer } from "../../components";
 import Routers from "../../routes";
 
-const MainLayout = () => {
+const MainLayout: React.FC = () => {
   return (
     <section className="app">
       <Navbar />

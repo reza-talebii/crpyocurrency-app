@@ -1,9 +1,10 @@
 import { Result, Button, Typography } from "antd";
 import { CloseCircleOutlined } from "@ant-design/icons";
+import { FC } from "react";
 
 const { Paragraph, Text } = Typography;
 
-const Error = () => {
+const Error: FC = () => {
   return (
     <Result
       status="error"

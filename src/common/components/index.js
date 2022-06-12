@@ -1,4 +1,4 @@
-export { default as Navbar } from "./uiKit/Navbar/Navbar";
+export { default as Navbar } from "./uiKit/Navbar";
 export { default as Loader } from "./uiKit/Loader";
 export { default as Chart } from "./uiKit/Chart";
 export { default as Error } from "./uiKit/Error";
