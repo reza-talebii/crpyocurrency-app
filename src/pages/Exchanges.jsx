@@ -7,6 +7,8 @@ import { Loader } from "../common/components";
 import { Card, Row, Col } from "antd";
 import millify from "millify";
 
+import { ExchangesType } from "../common/interfaces/crypto";
+
 const Exchanges = () => {
   const { data: exchanges, isFetching } = useGetCryptoExchangesQuery();
 
