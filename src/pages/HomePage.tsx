@@ -1,15 +1,15 @@
 import React from "react";
-import millify from "millify";
-import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
+import millify from "millify";
 
 import { useGetCryptosQuery } from "../common/services/cryptoApi";
 import { Loader, Error } from "../common/components";
 import { Cryptocurrencies, News } from "./";
 
+import { Typography, Row, Col, Statistic } from "antd";
 const { Title } = Typography;
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   const { data, isFetching, isError } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
