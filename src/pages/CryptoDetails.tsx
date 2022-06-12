@@ -122,7 +122,7 @@ const CryptoDetails: React.FC = () => {
       </Col>
 
       <Chart
-        coinHistory={historyData}
+        coinHistory={historyData?.data.change}
         currentPrice={millify(cryptoDetails?.price)}
         coinName={cryptoDetails?.name}
         symbol={cryptoDetails?.symbol}

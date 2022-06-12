@@ -1,19 +1,26 @@
-import { useState } from "react";
+import { FC } from "react";
 
 // import LineChart from "./LineChart";
 import TradingviewChart from "./TradingviewChart";
+import { ChartProps } from "./interfaces";
 
 import { Col, Row, Typography, Breadcrumb, Button } from "antd";
 const { Title } = Typography;
 
-const Chart = ({ coinHistory, currentPrice, coinName, symbol }) => {
-  const [activeChart, setActiveChart] = useState("tradingview");
+const Chart: FC<ChartProps> = ({
+  coinHistory,
+  currentPrice,
+  coinName,
+  symbol,
+}) => {
+  console.log(currentPrice);
+  // const [activeChart, setActiveChart] = useState("tradingview");
 
   //type of btn bg
-  const lineChartBgColor =
-    activeChart === "tradingview" ? "secondary" : "primary";
-  const tradingviewChartBgColor =
-    activeChart === "tradingview" ? "primary " : "secondary";
+  // const lineChartBgColor =
+  //   activeChart === "tradingview" ? "secondary" : "primary";
+  // const tradingviewChartBgColor =
+  //   activeChart === "tradingview" ? "primary " : "secondary";
 
   return (
     <>
@@ -23,7 +30,7 @@ const Chart = ({ coinHistory, currentPrice, coinName, symbol }) => {
         </Title>
         <Col className="price-container">
           <Title level={5} className="price-change">
-            Change: {coinHistory?.data?.change}%
+            Change: {coinHistory}%
           </Title>
           <Title level={5} className="current-price">
             Current {coinName} Price: $ {currentPrice}
