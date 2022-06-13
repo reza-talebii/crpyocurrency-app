@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
     totalMarketCap,
     total24hVolume,
     totalMarkets,
-  } = globalStats;
+  } = { ...globalStats };
 
   return (
     <>
@@ -33,19 +33,19 @@ const HomePage: React.FC = () => {
 
       <Row>
         <Col span={12}>
-          <Statistic title="Total CryptoCurrencies" value={millify(total)} />
+          <Statistic title="Total CryptoCurrencies" value={total} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Exchanges" value={millify(totalExchanges)} />
+          <Statistic title="Total Exchanges" value={totalExchanges} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Market Cap" value={millify(totalMarketCap)} />
+          <Statistic title="Total Market Cap" value={totalMarketCap} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total 24h Volume" value={millify(total24hVolume)} />
+          <Statistic title="Total 24h Volume" value={total24hVolume} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Markets" value={millify(totalMarkets)} />
+          <Statistic title="Total Markets" value={totalMarkets} />
         </Col>
       </Row>
 

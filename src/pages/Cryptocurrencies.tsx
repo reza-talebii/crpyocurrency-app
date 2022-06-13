@@ -1,29 +1,34 @@
 import { useState, useEffect, FC } from "react";
 import { Link } from "react-router-dom";
 
-import millify from "millify";
+// import millify from "millify";
 import { Card, Row, Col, Input } from "antd";
 
 import { useGetCryptosQuery } from "../common/services/cryptoApi";
 
 import { Error, Loader } from "../common/components";
-import { filterCoins } from "../common/helper/filterCoins";
+// import { filterCoins } from "../common/helper/filterCoins";
 
 import { TypeSimplified } from "../common/types";
-import { ICoin } from "../common/interfaces/crypto";
+import { ICoins } from "../common/interfaces/crypto";
 
 const Cryptocurrencies: FC<TypeSimplified> = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data: cryptos, isFetching, isError } = useGetCryptosQuery(count);
   const [searchTerm, setSearchTerm] = useState("");
-  const [cryptoList, setCryptoList] = useState<ICoin[]>([]);
+  const [cryptoList, setCryptoList] = useState<ICoins[] | []>([]);
 
   //FILTER COINS & SET "cryptoList" STATE
   useEffect(() => {
     const cryptoCoinsData = cryptos?.data?.coins;
-    const filteredCoins = filterCoins(cryptoCoinsData, searchTerm);
 
-    setCryptoList(filteredCoins);
+    const filteredCryptos = cryptoCoinsData?.filter(
+      (coin: ICoins) =>
+        coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    if (filteredCryptos !== undefined) setCryptoList(filteredCryptos);
   }, [cryptos, searchTerm]);
 
   //handling Error & loading

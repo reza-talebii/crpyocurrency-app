@@ -86,18 +86,37 @@ export interface IHistoryQuery {
 }
 
 export interface IStats {
-  total: any;
-  total24hVolume: any;
-  totalCoins: any;
-  totalExchanges: any;
-  totalMarketCap: any;
-  totalMarkets: any;
+  total: string;
+  total24hVolume: string;
+  totalCoins: string;
+  totalExchanges: string;
+  totalMarketCap: string;
+  totalMarkets: string;
 }
 
-export interface ICryptodQuery {
+export interface ICoins {
+  ["24hVolume"]: string;
+  btcPrice: string;
+  change: string;
+  coinrankingUrl: string;
+  color: string;
+  iconUrl: string;
+  listedAt: number;
+  lowVolume: false;
+  marketCap: string;
+  name: string;
+  price: string;
+  rank: number;
+  sparkline: [string];
+  tier: string;
+  symbol: string;
+  uuid: string;
+}
+
+export interface ICryptosQuery {
   data: {
-    coins: ICoin[];
-    stats?: IStats;
+    coins: ICoins[];
+    stats: IStats;
   };
   status?: "success";
 }
