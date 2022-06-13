@@ -1,4 +1,10 @@
-import { HomePage, Cryptocurrencies, CryptoDetails, News } from "../../pages";
+import {
+  HomePage,
+  Cryptocurrencies,
+  CryptoDetails,
+  News,
+  Exchanges,
+} from "../../pages";
 
 import { RoutesObject } from "../interfaces/Routes";
 
@@ -22,5 +28,10 @@ export const PublicRoutes: RoutesObject = {
     get: "/news",
     return: <News simplified={null} />,
     title: "News",
+  },
+  exchanges: {
+    get: "/exchanges",
+    return: <Exchanges />,
+    title: "exchanges",
   },
 };

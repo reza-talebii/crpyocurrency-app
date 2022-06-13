@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// import icon from "../../../../assets/images/icon.png";
+import icon from "../../../../assets/images/icon.png";
 
 import { Button, Menu, Typography, Avatar } from "antd";
 import { Link } from "react-router-dom";
@@ -30,10 +30,11 @@ const Navbar = () => {
         <div className="logo-container">
           <Avatar src={""} size="large" />
           <Typography.Title level={3} className="logo">
-            <Link to="/">Cryptoverse</Link>
+            <Link to="/">Cryptocurrencies</Link>
           </Typography.Title>
           <Button
             className="menu-control-container"
+            style={{ verticalAlign: "baseline" }}
             onClick={() => setVisible((prevState) => !prevState)}
           >
             <MenuOutlined />

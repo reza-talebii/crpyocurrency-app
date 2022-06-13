@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import { useGetCryptoExchangesQuery } from "../common/services/cryptoExchangesApi";
 
@@ -9,8 +9,9 @@ import millify from "millify";
 
 import { ExchangesType } from "../common/interfaces/crypto";
 
-const Exchanges = () => {
-  const { data: exchanges, isFetching } = useGetCryptoExchangesQuery();
+const Exchanges: FC = () => {
+  const { data: exchanges, isFetching } =
+    useGetCryptoExchangesQuery("exchanges");
 
   if (isFetching) return <Loader />;
 
@@ -18,7 +19,7 @@ const Exchanges = () => {
     <div>
       {" "}
       <Row gutter={[32, 32]} className="crypto-card-container">
-        {exchanges?.map((exchange) => (
+        {exchanges?.map((exchange: ExchangesType) => (
           <Col
             xs={24}
             sm={12}
