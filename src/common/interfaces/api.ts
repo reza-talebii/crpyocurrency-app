@@ -2,7 +2,7 @@
 
 export interface IHeaderApi {
   ["X-RapidAPI-Host"]: string;
-  ["X-RapidAPI-Key"]: string;
+  ["X-RapidAPI-Key"]: string | undefined;
 }
 
 export interface ICreateRequest {
