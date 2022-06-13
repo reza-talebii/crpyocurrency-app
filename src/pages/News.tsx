@@ -49,7 +49,7 @@ const News: React.FC<TypeSimplified> = ({ simplified }) => {
         </Col>
       )}
 
-      {cryptoNews.value.map((news: NewsCoin, i: number) => (
+      {cryptoNews?.value?.map((news: NewsCoin, i: number) => (
         <Col xs={24} sm={12} lg={8} key={i}>
           <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noreferrer">

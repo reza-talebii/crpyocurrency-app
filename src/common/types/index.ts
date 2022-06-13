@@ -7,3 +7,10 @@ export type LinksCoin = {
   type: string;
   url: string;
 };
+
+export type paramHistory = {
+  coinID: any;
+  timePeriod: string;
+};
+
+export type NewsCoinParamsQuery = { newsCategory: string; count: number };

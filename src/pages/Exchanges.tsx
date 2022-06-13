@@ -10,8 +10,7 @@ import millify from "millify";
 import { ExchangesType } from "../common/interfaces/crypto";
 
 const Exchanges: FC = () => {
-  const { data: exchanges, isFetching } =
-    useGetCryptoExchangesQuery("exchanges");
+  const { data: exchanges, isFetching } = useGetCryptoExchangesQuery();
 
   if (isFetching) return <Loader />;
 

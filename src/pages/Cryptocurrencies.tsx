@@ -22,6 +22,7 @@ const Cryptocurrencies: FC<TypeSimplified> = ({ simplified }) => {
   useEffect(() => {
     const cryptoCoinsData = cryptos?.data?.coins;
     const filteredCoins = filterCoins(cryptoCoinsData, searchTerm);
+
     setCryptoList(filteredCoins);
   }, [cryptos, searchTerm]);
 

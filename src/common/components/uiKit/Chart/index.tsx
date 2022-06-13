@@ -13,7 +13,6 @@ const Chart: FC<ChartProps> = ({
   coinName,
   symbol,
 }) => {
-  console.log(currentPrice);
   // const [activeChart, setActiveChart] = useState("tradingview");
 
   //type of btn bg

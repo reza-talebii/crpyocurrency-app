@@ -1,6 +1,6 @@
 import { LinksCoin } from "../types";
 export interface Coin {
-  // "24hVolume": string;
+  "24hVolume": number;
   btcPrice: number;
   change: number;
   coinrankingUrl: string;
@@ -58,4 +58,36 @@ export interface NewsCoin {
   }[];
   url: string;
   _type: string;
+}
+
+export interface AllNews {
+  queryContext: object;
+  readLink: string;
+  sort: object;
+  totalEstimatedMatches: number;
+  value: NewsCoin[];
+  _type: string;
+}
+
+export interface Stats {
+  total: any;
+  total24hVolume: any;
+  totalCoins: any;
+  totalExchanges: any;
+  totalMarketCap: any;
+  totalMarkets: any;
+}
+
+export type IcryptodQuery = {
+  data: {
+    coins: Coin[];
+    stats: Stats;
+  };
+  status: string;
+};
+
+export interface IHistoryQuery {
+  data: {
+    change: any;
+  };
 }
