@@ -1,19 +1,29 @@
 import { LinksCoin } from "../types";
 export interface ICoin {
-  "24hVolume": number;
+  ["24hVolume"]: string;
+  allTimeHigh: { price: string; timestamp: number };
   btcPrice: number;
-  change: number;
+  change: string;
   coinrankingUrl: string;
+  color: string;
+  description: any;
   iconUrl: string;
-  marketCap: number;
-  name: string;
-  price: number;
-  rank: number;
-  sparkline: [number];
-  symbol: string;
-  tier: number;
-  uuid: number;
   links: LinksCoin[];
+  listedAt: number;
+  lowVolume: false;
+  marketCap: string;
+  name: string;
+  numberOfExchanges: number;
+  numberOfMarkets: number;
+  price: string;
+  priceAt: number;
+  rank: 1;
+  sparkline: number[];
+  supply: { confirmed: true; total: "19066281"; circulating: string };
+  symbol: string;
+  tier: 1;
+  uuid: string;
+  websiteUrl: string;
 }
 
 export interface IExchangesType {
@@ -89,5 +99,13 @@ export interface ICryptodQuery {
     coins: ICoin[];
     stats?: IStats;
   };
-  status?: string;
+  status?: "success";
+}
+
+export interface ICryptoDetailQuery {
+  data: {
+    coin: ICoin;
+    stats?: IStats;
+  };
+  status?: "success";
 }

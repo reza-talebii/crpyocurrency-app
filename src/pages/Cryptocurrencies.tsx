@@ -64,9 +64,9 @@ const Cryptocurrencies: FC<TypeSimplified> = ({ simplified }) => {
                 }
                 hoverable
               >
-                <p>Price:{millify(crypto.price)}</p>
-                <p>Market Cap: {millify(crypto.marketCap)}</p>
-                <p>Daily Change: {millify(crypto.change)}</p>
+                <p>Price:{crypto.price}</p>
+                <p>Market Cap: {crypto.marketCap}</p>
+                <p>Daily Change: {crypto.change}</p>
               </Card>
             </Link>
           </Col>
