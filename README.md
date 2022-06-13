@@ -1,5 +1,5 @@
 ## برنامه ارزهای دیجیتال
-> یک پروژه فول ریسپانسیو توسعه داده با react, redux toolkit (redux query), ant design , rapid api
+> یک پروژه فول ریسپانسیو توسعه داده با react, redux toolkit (redux query), ant design , typescript
 > دمو سایت [_اینجا_](https://crypto-appppp.netlify.app/).
 
 ## اسکرین شات
