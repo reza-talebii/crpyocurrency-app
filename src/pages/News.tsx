@@ -5,7 +5,7 @@ import { useGetCryptoNewsQuery } from "../common/services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../common/services/cryptoApi";
 import { Error, Loader } from "../common/components";
 import { TypeSimplified } from "../common/types";
-import { Coin, NewsCoin } from "../common/interfaces/crypto";
+import { ICoin, INewsCoin } from "../common/interfaces/crypto";
 
 import { Typography, Row, Col, Avatar, Card } from "antd";
 const { Text, Title } = Typography;
@@ -40,7 +40,7 @@ const News: React.FC<TypeSimplified> = ({ simplified }) => {
             onChange={(e) => setNewsCategory(e.target.value)}
           >
             <option value="Cryptocurency">Cryptocurrency</option>
-            {data?.data?.coins?.map((currency: Coin, index: number) => (
+            {data?.data?.coins?.map((currency: ICoin, index: number) => (
               <option value={currency?.name} key={index}>
                 {currency?.name}
               </option>
@@ -49,7 +49,7 @@ const News: React.FC<TypeSimplified> = ({ simplified }) => {
         </Col>
       )}
 
-      {cryptoNews?.value?.map((news: NewsCoin, i: number) => (
+      {cryptoNews?.value?.map((news: INewsCoin, i: number) => (
         <Col xs={24} sm={12} lg={8} key={i}>
           <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noreferrer">

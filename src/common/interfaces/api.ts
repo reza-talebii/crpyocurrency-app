@@ -5,7 +5,7 @@ export interface IHeaderApi {
   ["X-RapidAPI-Key"]: string;
 }
 
-export interface IcreateRequest {
+export interface ICreateRequest {
   url: string;
   headers: IHeaderApi;
 }

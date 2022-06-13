@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 import { BASE_URL, exchangesApiHeaders } from "../constant/api";
-import { ExchangesType } from "../interfaces/crypto";
+import { IExchangesType } from "../interfaces/crypto";
 
 const createRequest = (url: string) => ({
   url,
@@ -13,7 +13,7 @@ export const cryptoExchangesApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
 
   endpoints: (builder) => ({
-    getCryptoExchanges: builder.query<ExchangesType[], void>({
+    getCryptoExchanges: builder.query<IExchangesType[], void>({
       query: (): any => createRequest(`/exchanges`),
     }),
   }),

@@ -10,13 +10,13 @@ import { Error, Loader } from "../common/components";
 import { filterCoins } from "../common/helper/filterCoins";
 
 import { TypeSimplified } from "../common/types";
-import { Coin } from "../common/interfaces/crypto";
+import { ICoin } from "../common/interfaces/crypto";
 
 const Cryptocurrencies: FC<TypeSimplified> = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data: cryptos, isFetching, isError } = useGetCryptosQuery(count);
   const [searchTerm, setSearchTerm] = useState("");
-  const [cryptoList, setCryptoList] = useState<Coin[]>([]);
+  const [cryptoList, setCryptoList] = useState<ICoin[]>([]);
 
   //FILTER COINS & SET "cryptoList" STATE
   useEffect(() => {

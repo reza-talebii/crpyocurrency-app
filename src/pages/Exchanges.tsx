@@ -7,7 +7,7 @@ import { Loader } from "../common/components";
 import { Card, Row, Col } from "antd";
 import millify from "millify";
 
-import { ExchangesType } from "../common/interfaces/crypto";
+import { IExchangesType } from "../common/interfaces/crypto";
 
 const Exchanges: FC = () => {
   const { data: exchanges, isFetching } = useGetCryptoExchangesQuery();
@@ -18,7 +18,7 @@ const Exchanges: FC = () => {
     <div>
       {" "}
       <Row gutter={[32, 32]} className="crypto-card-container">
-        {exchanges?.map((exchange: ExchangesType) => (
+        {exchanges?.map((exchange: IExchangesType) => (
           <Col
             xs={24}
             sm={12}

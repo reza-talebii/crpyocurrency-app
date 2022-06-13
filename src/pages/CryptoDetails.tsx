@@ -37,6 +37,8 @@ const CryptoDetails: React.FC = () => {
   });
   const cryptoDetails = data?.data?.coin;
 
+  console.log(data);
+
   //handling Error & loading
   if (isError) return <Error />;
   if (isFetching) return <Loader />;

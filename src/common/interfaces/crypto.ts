@@ -1,5 +1,5 @@
 import { LinksCoin } from "../types";
-export interface Coin {
+export interface ICoin {
   "24hVolume": number;
   btcPrice: number;
   change: number;
@@ -16,7 +16,7 @@ export interface Coin {
   links: LinksCoin[];
 }
 
-export interface ExchangesType {
+export interface IExchangesType {
   country: string;
   description: string;
   has_trading_incentive: boolean;
@@ -31,7 +31,7 @@ export interface ExchangesType {
   year_established: number;
 }
 
-export interface NewsCoin {
+export interface INewsCoin {
   category: string;
   datePublished: string;
   description: string;
@@ -60,16 +60,22 @@ export interface NewsCoin {
   _type: string;
 }
 
-export interface AllNews {
+export interface IAllNews {
   queryContext: object;
   readLink: string;
   sort: object;
   totalEstimatedMatches: number;
-  value: NewsCoin[];
+  value: INewsCoin[];
   _type: string;
 }
 
-export interface Stats {
+export interface IHistoryQuery {
+  data: {
+    change: any;
+  };
+}
+
+export interface IStats {
   total: any;
   total24hVolume: any;
   totalCoins: any;
@@ -78,16 +84,10 @@ export interface Stats {
   totalMarkets: any;
 }
 
-export type IcryptodQuery = {
+export interface ICryptodQuery {
   data: {
-    coins: Coin[];
-    stats: Stats;
+    coins: ICoin[];
+    stats?: IStats;
   };
-  status: string;
-};
-
-export interface IHistoryQuery {
-  data: {
-    change: any;
-  };
+  status?: string;
 }

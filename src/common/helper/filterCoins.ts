@@ -1,8 +1,8 @@
-import { Coin } from "../interfaces/crypto";
+import { ICoin } from "../interfaces/crypto";
 
-export const filterCoins = (coins: Coin[], searchTerm: string): Coin[] => {
+export const filterCoins = (coins: ICoin[], searchTerm: string): ICoin[] => {
   const filteredCryptos = coins?.filter(
-    (coin) =>
+    (coin: ICoin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
   );
