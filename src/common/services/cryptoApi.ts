@@ -1,4 +1,8 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import {
+  createApi,
+  FetchArgs,
+  fetchBaseQuery,
+} from "@reduxjs/toolkit/query/react";
 
 import { BASE_URL, cryptoApiHeaders } from "../constant/api";
 import {
@@ -16,15 +20,16 @@ export const cryptoApi = createApi({
 
   endpoints: (builder) => ({
     getCryptos: builder.query<ICryptosQuery, number>({
-      query: (count): any => createRequest(`/coins/?limit=${count}`),
+      query: (count): string | FetchArgs =>
+        createRequest(`/coins/?limit=${count}`),
     }),
 
-    getCryptoDetails: builder.query<ICryptoDetailQuery, any>({
-      query: (coinID): any => createRequest(`/coin/${coinID}`),
+    getCryptoDetails: builder.query<ICryptoDetailQuery, string>({
+      query: (coinID): string | FetchArgs => createRequest(`/coin/${coinID}`),
     }),
 
     getCryptoHistory: builder.query<IHistoryQuery, paramHistory>({
-      query: ({ coinID, timePeriod }): any =>
+      query: ({ coinID, timePeriod }): string | FetchArgs =>
         createRequest(`coin/${coinID}/history?timeperiod=${timePeriod}`),
     }),
   }),

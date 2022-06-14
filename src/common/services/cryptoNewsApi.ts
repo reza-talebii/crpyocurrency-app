@@ -1,4 +1,8 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import {
+  createApi,
+  fetchBaseQuery,
+  FetchArgs,
+} from "@reduxjs/toolkit/query/react";
 
 import { BASE_URL, NewsApiHeaders } from "../constant/api";
 import { IAllNews } from "../interfaces/crypto";
@@ -12,7 +16,7 @@ export const cryptoNewsApi = createApi({
 
   endpoints: (builder) => ({
     getCryptoNews: builder.query<IAllNews, NewsCoinParamsQuery>({
-      query: ({ newsCategory, count }): any =>
+      query: ({ newsCategory, count }): FetchArgs | string =>
         createRequest(
           `/news/search?q=${newsCategory}&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`
         ),

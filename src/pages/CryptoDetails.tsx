@@ -29,12 +29,16 @@ const { Title, Text } = Typography;
 
 const CryptoDetails: React.FC = () => {
   const { coinID } = useParams();
+  const coinIDToString = String(coinID);
+
   const [timePeriod, setTimePeriod] = useState("7d");
-  const { data, isFetching, isError } = useGetCryptoDetailsQuery(coinID);
+  const { data, isFetching, isError } =
+    useGetCryptoDetailsQuery(coinIDToString);
   const { data: historyData } = useGetCryptoHistoryQuery({
     coinID,
     timePeriod,
   });
+
   const cryptoDetails = data?.data?.coin;
 
   //handling Error & loading
@@ -123,12 +127,14 @@ const CryptoDetails: React.FC = () => {
         </p>
       </Col>
 
-      {/* <Chart
-        coinHistory={historyData?.data?.change}
-        currentPrice={cryptoDetails?.price}
-        coinName={cryptoDetails?.name}
-        symbol={cryptoDetails?.symbol}
-      /> */}
+      {cryptoDetails?.price && (
+        <Chart
+          coinHistory={historyData?.data?.change}
+          currentPrice={cryptoDetails?.price}
+          coinName={cryptoDetails?.name}
+          symbol={cryptoDetails?.symbol}
+        />
+      )}
 
       <Col className="stats-container">
         <Col className="coin-value-statistics">
