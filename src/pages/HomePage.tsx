@@ -33,19 +33,34 @@ const HomePage: React.FC = () => {
 
       <Row>
         <Col span={12}>
-          <Statistic title="Total CryptoCurrencies" value={total} />
+          <Statistic
+            title="Total CryptoCurrencies"
+            value={total && millify(+total)}
+          />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Exchanges" value={totalExchanges} />
+          <Statistic
+            title="Total Exchanges"
+            value={totalExchanges && millify(+totalExchanges)}
+          />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Market Cap" value={totalMarketCap} />
+          <Statistic
+            title="Total Market Cap"
+            value={totalMarketCap && millify(+totalMarketCap)}
+          />
         </Col>
         <Col span={12}>
-          <Statistic title="Total 24h Volume" value={total24hVolume} />
+          <Statistic
+            title="Total 24h Volume"
+            value={total24hVolume && millify(+total24hVolume)}
+          />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Markets" value={totalMarkets} />
+          <Statistic
+            title="Total Markets"
+            value={totalMarkets && millify(+totalMarkets)}
+          />
         </Col>
       </Row>
 
