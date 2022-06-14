@@ -16,10 +16,7 @@ import {
   ThunderboltOutlined,
 } from "@ant-design/icons";
 
-import {
-  useGetCryptoDetailsQuery,
-  useGetCryptoHistoryQuery,
-} from "../common/services/cryptoApi";
+import { useGetCryptoDetailsQuery } from "../common/services/cryptoApi";
 
 import { Error, Loader, Chart } from "../common/components";
 
@@ -31,13 +28,8 @@ const CryptoDetails: React.FC = () => {
   const { coinID } = useParams();
   const coinIDToString = String(coinID);
 
-  const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching, isError } =
     useGetCryptoDetailsQuery(coinIDToString);
-  const { data: historyData } = useGetCryptoHistoryQuery({
-    coinID,
-    timePeriod,
-  });
 
   const cryptoDetails = data?.data?.coin;
 
@@ -127,9 +119,9 @@ const CryptoDetails: React.FC = () => {
         </p>
       </Col>
 
-      {cryptoDetails?.price && (
+      {cryptoDetails && (
         <Chart
-          coinHistory={historyData?.data?.change}
+          coinHistory={cryptoDetails?.change}
           currentPrice={cryptoDetails?.price}
           coinName={cryptoDetails?.name}
           symbol={cryptoDetails?.symbol}
