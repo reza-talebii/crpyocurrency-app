@@ -37,8 +37,6 @@ const CryptoDetails: React.FC = () => {
   });
   const cryptoDetails = data?.data?.coin;
 
-  console.log(data);
-
   //handling Error & loading
   if (isError) return <Error />;
   if (isFetching) return <Loader />;
@@ -46,23 +44,30 @@ const CryptoDetails: React.FC = () => {
   const stats = [
     {
       title: "Price to USD",
-      value: `$ ${cryptoDetails?.price}`,
+      value: `$ ${cryptoDetails?.price && millify(+cryptoDetails?.price)}`,
       icon: <DollarCircleOutlined />,
     },
     { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
     {
       title: "24h Volume",
-      value: `$ ${cryptoDetails?.["24hVolume"]}`,
+      value: `$ ${
+        cryptoDetails?.["24hVolume"] && millify(+cryptoDetails?.["24hVolume"])
+      }`,
       icon: <ThunderboltOutlined />,
     },
     {
       title: "Market Cap",
-      value: `$ ${cryptoDetails?.marketCap}`,
+      value: `$ ${
+        cryptoDetails?.marketCap && millify(+cryptoDetails.marketCap)
+      }`,
       icon: <DollarCircleOutlined />,
     },
     {
       title: "All-time-high(daily avg.)",
-      value: `$ ${cryptoDetails?.allTimeHigh?.price}`,
+      value: `$ ${
+        cryptoDetails?.allTimeHigh?.price &&
+        millify(+cryptoDetails?.allTimeHigh.price)
+      }`,
       icon: <TrophyOutlined />,
     },
   ];
@@ -75,7 +80,9 @@ const CryptoDetails: React.FC = () => {
     },
     {
       title: "Number Of Exchanges",
-      value: cryptoDetails?.numberOfExchanges,
+      value:
+        cryptoDetails?.numberOfExchanges &&
+        millify(+cryptoDetails?.numberOfExchanges),
       icon: <MoneyCollectOutlined />,
     },
     {
@@ -89,12 +96,17 @@ const CryptoDetails: React.FC = () => {
     },
     {
       title: "Total Supply",
-      value: `$ ${cryptoDetails?.supply?.total}`,
+      value: `$ ${
+        cryptoDetails?.supply?.total && millify(+cryptoDetails?.supply?.total)
+      }`,
       icon: <ExclamationCircleOutlined />,
     },
     {
       title: "Circulating Supply",
-      value: `$ ${cryptoDetails?.supply?.circulating}`,
+      value: `$ ${
+        cryptoDetails?.supply?.circulating &&
+        millify(+cryptoDetails?.supply?.circulating)
+      }`,
       icon: <ExclamationCircleOutlined />,
     },
   ];
