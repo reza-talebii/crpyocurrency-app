@@ -1,24 +1,16 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 
-import { useGetCryptoExchangesQuery } from "../common/services/cryptoExchangesApi";
-
-import { Loader } from "../common/components";
-
-import { Card, Row, Col } from "antd";
-import millify from "millify";
-
-import { IExchangesType } from "../common/interfaces/crypto";
+import { Card, Row, Col } from 'antd'
 
 const Exchanges: FC = () => {
-  const { data: exchanges, isFetching } = useGetCryptoExchangesQuery();
+  // const { data: exchanges, isFetching } = useGetCryptoExchangesQuery();
 
-  if (isFetching) return <Loader />;
+  // if (isFetching) return <Loader />;
 
   return (
     <div>
-      {" "}
       <Row gutter={[32, 32]} className="crypto-card-container">
-        {exchanges?.map((exchange: IExchangesType) => (
+        {/* {exchanges?.map((exchange: IExchangesType) => (
           <Col
             xs={24}
             sm={12}
@@ -44,10 +36,10 @@ const Exchanges: FC = () => {
               </Card>
             </a>
           </Col>
-        ))}
+        ))} */}
       </Row>
     </div>
-  );
-};
+  )
+}
 
-export default Exchanges;
+export default Exchanges

@@ -1,4 +1,5 @@
-import { ROUTES } from '@enums'
+import MainLayout from 'layout'
+import { ROUTES } from 'models/enums'
 import { CryptocurrenciesPage, ExchangesPage, HomePage, NewsPage } from 'pages'
 import CryptoDetails from 'pages/cryptocurrencies/[id]'
 import { Navigate, RouteObject } from 'react-router-dom'
@@ -6,7 +7,7 @@ import { Navigate, RouteObject } from 'react-router-dom'
 export const definitionRoutes: RouteObject[] = [
   {
     path: ROUTES.home,
-    element: <></>,
+    element: <MainLayout />,
     children: [
       {
         element: <HomePage />,
