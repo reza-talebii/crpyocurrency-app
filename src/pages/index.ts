@@ -1,0 +1,5 @@
+export { default as CryptoPage } from './cryptocurrencies/[id]'
+export { default as CryptocurrenciesPage } from './cryptocurrencies'
+export { default as ExchangesPage } from './exchanges'
+export { default as HomePage } from './home'
+export { default as NewsPage } from './news'
