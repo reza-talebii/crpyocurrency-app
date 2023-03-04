@@ -10,7 +10,7 @@ const MainLayout: React.FC<{ children?: ReactNode }> = ({ children }) => {
     <section className="app">
       <Navbar />
       <main className="main">
-        <Layout>
+        <Layout className="layout">
           <section className="routes">
             <Outlet />
           </section>

@@ -3,12 +3,12 @@ import React, { FC } from 'react'
 import ButtonUiKit from './ui/Button'
 
 interface IProps {
-  title: string
-  subTitle: string
+  title?: string
+  subTitle?: string
   tyAgainHandler: () => void
 }
 
-const ErrorResult: FC<IProps> = ({ subTitle, title, tyAgainHandler }) => {
+const ErrorResult: FC<IProps> = ({ subTitle = 'Please try again', title = 'Error in receiving information', tyAgainHandler }) => {
   return (
     <Result
       status="error"
@@ -17,7 +17,7 @@ const ErrorResult: FC<IProps> = ({ subTitle, title, tyAgainHandler }) => {
       extra={[
         <Space size={10} key="tryAgain">
           <ButtonUiKit type="primary" onClick={tyAgainHandler}>
-            امتحان مجدد
+            try Agin
           </ButtonUiKit>
         </Space>,
       ]}

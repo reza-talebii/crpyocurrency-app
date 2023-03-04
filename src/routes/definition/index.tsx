@@ -20,7 +20,7 @@ export const definitionRoutes: RouteObject[] = [
       },
       {
         element: <CryptoDetails />,
-        path: `${ROUTES.crypto}/:id`,
+        path: `${ROUTES.cryptocurrencies}/:id`,
       },
       {
         element: <NewsPage />,
@@ -28,7 +28,7 @@ export const definitionRoutes: RouteObject[] = [
       },
       {
         element: <ExchangesPage />,
-        path: ROUTES.home,
+        path: ROUTES.exchanges,
       },
     ],
   },
